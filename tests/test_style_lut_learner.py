@@ -38,7 +38,9 @@ class StyleLutLearnerTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.workspace = tempfile.TemporaryDirectory()
-        cls.root = Path(cls.workspace.name)
+        # Windows hosted runners can return an 8.3 alias for TEMP. Compare the
+        # same canonical path representation as the production output resolver.
+        cls.root = Path(cls.workspace.name).resolve()
         cls.source = cls.root / "source.png"
         yy, xx = np.indices((32, 32))
         image = np.stack((xx * 8, yy * 8, (xx + yy) * 4), axis=-1).astype(np.uint8)
