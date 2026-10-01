@@ -38,6 +38,10 @@ Original creator's explanation: <https://patdavid.net/2013/08/film-emulation-pre
 Related collection color-space documentation: <https://rawpedia.rawtherapee.com/Film_Emulation>.
 MIT source and explicit CUBE license: <https://github.com/t0saki/lumix-original-looks>.
 
+`UPSTREAM_README.md` files are retained verbatim as provenance. Their relative
+links refer to files in the original upstream repository, not this checkout;
+use the linked source repository to follow those references.
+
 Other collections were excluded when their repository license did not clearly
 cover the LUT assets, or when they were camera Log transforms unsuitable for
 these already-rendered JPEGs. "Free download" alone was not treated as a license.
