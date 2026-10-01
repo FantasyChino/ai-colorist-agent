@@ -1,0 +1,75 @@
+style_profile:
+  identity:
+    name: Wong Kar Wai inspired cinema reference direction
+    category: [cinematic_reference, urban, expressive]
+    description: >-
+      用户选择某个具体电影画面时的审美参考，不是单一“王家卫 LUT”。
+      不同作品与镜头的光线、布景、色彩、运动各不相同，应从实际参考提取关系，不能统一套暖高光、青绿阴影或高对比。
+    status: aesthetic_reference_only
+
+  visual_character:
+    possible_subjects: [street, night_scene, portrait]
+    scene_policy: 都市、夜景或人像不自动要求此方向；优先用户意图与照片已有光色。
+    reference_questions:
+      - 具体参考的主体与背景如何分离，哪些颜色讲述故事？
+      - 黑位、灯光、肤色和混合光是否有意？
+      - 哪些特征来自照明、布景、镜头或运动，无法靠调色复刻？
+    possible_intentions: [romantic, melancholic, intense]
+    emotion_policy: 这些是可选解释，不是配色或场景必然带来的情绪。
+
+  tone_profile:
+    contrast:
+      decision: preserve_existing_light_ratio_then_compare_reference
+      description: >-
+        已有高光比的夜景谨慎新增对比。当前 contrast=high 会剪切两端，不用于机械加深所有阴影。
+    black_point:
+      decision: preserve_anchor_without_hiding_important_action
+      execution_limit: black_point=crushed 当前没有特殊操作，不能声称已压黑；lifted 会固定抬黑。
+    highlights:
+      goal: keep_light_sources_and_important_gradients_readable
+      execution_limit: 无局部灯牌保护、亮度 mask 或 RAW recovery；JPEG 已白信息无法真实找回。
+
+  color_profile:
+    overall_temperature:
+      decision: preserve_or_interpret_actual_mixed_light
+      execution_limit: 当前无 Temperature/Tint 控制。
+    color_relationship:
+      decision: derived_from_specific_reference_and_source
+      note: 暖冷、红绿、橙青或相邻色都只在参考与照片证据支持时考虑，不固定为某种互补配色。
+    saturation:
+      decision: maintain_subject_priority_and_light_detail
+      execution_limit: color_strategy 的全局饱和度未执行；有限 HSL 也影响全图共享色相。
+    split_toning:
+      role: possible_reference_observation_only
+      execution_limit: 当前工具无按亮度区间的阴影染色/高光染色，不用 HSL 冒充。
+    skin_tone:
+      goal: plausible_under_scene_light
+      execution_limit: 无人物 mask；不要把“保护肤色”当作已执行开关。
+
+  texture_profile:
+    role: reference_only
+    unavailable_in_current_pipeline: [grain, halation, motion_blur, step_printing, spatial_bloom]
+    note: 调色和 LUT 不能再造拍摄运动、快门、镜头或布景效果。
+
+  implementation:
+    catalog: assets/luts/catalog.json
+    dedicated_wong_karwai_lut_available: false
+    optional_generic_candidate_ids: [pat_fuji_superia_800, lumix_lowsun]
+    candidate_policy: >-
+      这是有条件的通用色彩试验，不是王家卫预设或准确复刻。
+      Superia 800 的青黑、白色染色与局部亮度反转可能破坏夜景黑位/肤色；Lowsun 来自 LUMIX S9 Standard+sRGB，普通 JPEG 的 profile 匹配未经保证。
+      只有实际参考需要类似方向且低强度预览胜过无 LUT 时才采用；已有强霓虹或严格中性色时可全部放弃。
+    strength_method: >-
+      MCP 无 lut_strength；使用 skill scripts/prepare_lut.py 烘焙候选强度，查询 catalog 并传实际返回的 cube 路径。
+    executable_baseline:
+      exposure: 0
+      tone_strategy: {contrast: medium, black_point: normal}
+      hsl_adjustment: {}
+    unsupported_promises: [dedicated_named_look_lut, automatic_skin_mask, luminance_split_toning, local_light_recovery, exact_film_frame_recreation]
+    acceptance: 主体和动作更清晰、现场光色仍可信、灯光细节与黑位得以保留；风格副作用大于收益时不用 LUT。
+
+  references:
+    - skills/style-matching/references/style-decisions.md
+    - skills/color-strategy/references/grading-foundations.md
+    - skills/color-strategy/references/tool-capabilities.md
+    - skills/color-strategy/references/lut-catalog.md

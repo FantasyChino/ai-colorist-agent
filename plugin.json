@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ai-colorist-agent",
+  "version": "1.0.0",
+  "description": "Host-model photographic judgment, ready-to-use creative LUTs and a local OpenCV MCP grading pipeline. No training or GPT API calls required.",
+  "author": {"name": "FantasyChino"},
+  "license": "MIT",
+  "repository": "https://github.com/FantasyChino/ai-colorist-agent",
+  "homepage": "https://github.com/FantasyChino/ai-colorist-agent",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "AI Colorist",
+        "shortDescription": "Photo grading with local tools",
+        "longDescription": "Inspect photos with your host model, select a ready-to-use look and apply it locally through MCP. Includes an optional source-dependent reference fitting tool.",
+        "developerName": "FantasyChino",
+        "category": "Creativity",
+        "defaultPrompt": "Inspect this photograph and grade it with AI Colorist, preserving useful highlight and shadow detail."
+      }
+    }
+  }
+}

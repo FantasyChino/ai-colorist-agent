@@ -1,0 +1,266 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "title": "Color Strategy Schema",
+
+  "description": "Artistic planning only. Not all fields execute in ColorPipeline; see execution_strategy_schema.json for supported controls.",
+
+  "type": "object",
+
+
+  "properties": {
+
+
+    "artistic_goal": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "target_style": {
+
+          "type": "string"
+
+        },
+
+
+        "emotion": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        },
+
+
+        "description": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "tone_strategy": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "contrast": {
+
+          "type": "string"
+
+        },
+
+
+        "black_point": {
+
+          "type": "string"
+
+        },
+
+
+        "highlight_rolloff": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "color_strategy": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "temperature": {
+
+          "type": "string"
+
+        },
+
+
+        "shadow_color": {
+
+          "type": "string"
+
+        },
+
+
+        "highlight_color": {
+
+          "type": "string"
+
+        },
+
+
+        "saturation": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "hsl_direction": {
+
+
+      "type": "object",
+
+      "description": "General HSL adjustment direction.",
+
+
+      "properties": {
+
+
+        "red": {
+
+          "type": "string"
+
+        },
+
+
+        "orange": {
+
+          "type": "string"
+
+        },
+
+
+        "yellow": {
+
+          "type": "string"
+
+        },
+
+
+        "green": {
+
+          "type": "string"
+
+        },
+
+
+        "blue": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "subject_protection": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "skin": {
+
+          "type": "boolean"
+
+        },
+
+
+        "face": {
+
+          "type": "boolean"
+
+        }
+
+      }
+
+    },
+
+
+    "texture_strategy": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "grain": {
+
+          "type": "string"
+
+        },
+
+
+        "bloom": {
+
+          "type": "string"
+
+        },
+
+
+        "softness": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "implementation_hint": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "recommended_method": {
+
+          "type": "string"
+
+        },
+
+
+        "lut_candidate": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+    "hsl_adjustment": {
+        "$ref": "execution_strategy_schema.json#/properties/hsl_adjustment"
+    }
+
+  }
+
+}

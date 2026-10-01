@@ -1,0 +1,24 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#",
+  "title":"Currently supported ColorPipeline strategy",
+  "description":"Documentation only, not enforced by runtime. Exposure is an 8-bit offset, not EV. No ICC/RAW/Log conversion.",
+  "type":"object", "additionalProperties":false,
+  "properties":{
+    "exposure":{"type":"number","minimum":-255,"maximum":255},
+    "tone_strategy":{"type":"object","additionalProperties":false,"properties":{
+      "contrast":{"enum":["low","medium","high"]}, "black_point":{"enum":["normal","lifted"]}
+    }},
+    "hsl_adjustment":{"type":"object","additionalProperties":false,"properties":{
+      "red":{"$ref":"#/definitions/hsvShift"},"orange":{"$ref":"#/definitions/hsvShift"},
+      "yellow":{"$ref":"#/definitions/hsvShift"},"green":{"$ref":"#/definitions/hsvShift"},
+      "cyan":{"$ref":"#/definitions/hsvShift"},"blue":{"$ref":"#/definitions/hsvShift"},
+      "purple":{"$ref":"#/definitions/hsvShift"},"magenta":{"$ref":"#/definitions/hsvShift"}
+    }},
+    "lut":{"type":"string","minLength":1}
+  },
+  "definitions":{"hsvShift":{"type":"object","additionalProperties":false,"properties":{
+    "hue":{"type":"integer","minimum":-179,"maximum":179},
+    "saturation":{"type":"integer","minimum":-255,"maximum":255},
+    "brightness":{"type":"integer","minimum":-255,"maximum":255}
+  }}}
+}

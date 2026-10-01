@@ -1,0 +1,2178 @@
+{
+  "version": 2,
+  "created_on": "2026-10-01",
+  "purpose": "Ten ready-to-use original creative looks plus eight separately licensed third-party candidates. No user training required.",
+  "default_policy": "No automatic LUT choice. Use identity/no-LUT as the baseline. Confirm input encoding and preview at a conservative strength before applying. Measurements are diagnostics, not an aesthetic pass.",
+  "cube_convention": "RGB triples; red fastest, green next, blue slowest; DOMAIN [0,1]; trilinear interpolation",
+  "collections": [
+    {
+      "id": "pat-david",
+      "license": "CC-BY-SA-4.0",
+      "count": 6
+    },
+    {
+      "id": "lumix-original",
+      "license": "MIT",
+      "count": 2
+    },
+    {
+      "id": "creative-v1",
+      "license": "MIT",
+      "count": 10
+    }
+  ],
+  "luts": [
+    {
+      "id": "pat_kodak_portra_160",
+      "name": "Pat David Portra 160 approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/kodak_portra_160.cube",
+      "sha256": "c58e614ca258933c8c84a9436879c0378a8cbc036f93ab87b47905fa3d922208",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/negative_new/kodak_portra_160.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/kodak_portra_160.png",
+        "original_sha256": "aa1e2343d81aa711a736b086007423b948c64406fc3c73f25f888f5e3c08e0eb",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 7.4161,
+            "rms_in_8bit_codes": 0.28142,
+            "p99_abs_in_8bit_codes": 0.96142
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "portrait",
+          "daylight",
+          "travel"
+        ],
+        "avoid": [
+          "strict product color accuracy",
+          "already faded blacks"
+        ],
+        "initial_strength_range": [
+          0.15,
+          0.35
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.02353,
+              0.01569,
+              0.01176
+            ],
+            "0.02": [
+              0.02108,
+              0.02416,
+              0.01722
+            ],
+            "0.18": [
+              0.12554,
+              0.16377,
+              0.15374
+            ],
+            "0.5": [
+              0.59314,
+              0.59216,
+              0.57696
+            ],
+            "0.9": [
+              0.92165,
+              0.90969,
+              0.89794
+            ],
+            "0.98": [
+              0.97682,
+              0.97245,
+              0.96839
+            ],
+            "1": [
+              0.99216,
+              0.97647,
+              0.98431
+            ]
+          },
+          "luma_decreasing_steps": 0,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.0,
+          "sum_downward_steps_in_8bit_codes": 0.0,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 1.858225,
+          "max_rgb_spread": 0.045914,
+          "range_10_to_90": 0.847636
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.757669,
+              0.506786,
+              0.305708
+            ],
+            [
+              0.012134,
+              0.23694,
+              0.035588
+            ],
+            [
+              0.337002,
+              0.445553,
+              0.761763
+            ],
+            [
+              0.992157,
+              0.516324,
+              0.003703
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "pat_kodak_portra_400",
+      "name": "Pat David Portra 400 approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/kodak_portra_400.cube",
+      "sha256": "c96efbc1a0dfabf30e82ffd1938f64f1f7c5bae3875fbcd257deacaa69c79595",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/negative_new/kodak_portra_400.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/kodak_portra_400.png",
+        "original_sha256": "1e55696363f4bb45222616e000e9e099a538fbb116605eea7b75852200d6d3f0",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 9.0159,
+            "rms_in_8bit_codes": 0.37047,
+            "p99_abs_in_8bit_codes": 1.40672
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "street",
+          "documentary",
+          "portrait"
+        ],
+        "avoid": [
+          "bright high-key with delicate whites",
+          "strict color accuracy"
+        ],
+        "initial_strength_range": [
+          0.15,
+          0.35
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.02353,
+              0.01961,
+              0.01961
+            ],
+            "0.02": [
+              0.0256,
+              0.02759,
+              0.03003
+            ],
+            "0.18": [
+              0.12976,
+              0.16824,
+              0.16855
+            ],
+            "0.5": [
+              0.61814,
+              0.61324,
+              0.62598
+            ],
+            "0.9": [
+              0.93714,
+              0.93091,
+              0.93121
+            ],
+            "0.98": [
+              0.97503,
+              0.97186,
+              0.97925
+            ],
+            "1": [
+              0.98824,
+              0.98039,
+              0.99216
+            ]
+          },
+          "luma_decreasing_steps": 0,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.0,
+          "sum_downward_steps_in_8bit_codes": 0.0,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 2.509972,
+          "max_rgb_spread": 0.038796,
+          "range_10_to_90": 0.863272
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.780944,
+              0.508232,
+              0.299101
+            ],
+            [
+              0.012266,
+              0.222933,
+              0.088641
+            ],
+            [
+              0.106972,
+              0.380596,
+              0.757405
+            ],
+            [
+              0.988627,
+              0.538814,
+              0.001569
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "pat_fuji_provia_100f",
+      "name": "Pat David Provia 100F approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/fuji_provia_100f.cube",
+      "sha256": "6d585dd00e13fe101a3e1cbfe31daaf5d6f6142ab044de2f1b184a30c6d16168",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/colorslide/fuji_provia_100f.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/fuji_provia_100f.png",
+        "original_sha256": "f77063246c8f98860378b9c997df5cc567b11182036265267821c2088167214d",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 3.90374,
+            "rms_in_8bit_codes": 0.23035,
+            "p99_abs_in_8bit_codes": 0.76662
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "daylight",
+          "travel",
+          "landscape"
+        ],
+        "avoid": [
+          "already harsh contrast",
+          "clipped saturated highlights"
+        ],
+        "initial_strength_range": [
+          0.1,
+          0.3
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.02745,
+              0.06275,
+              0.01961
+            ],
+            "0.02": [
+              0.03578,
+              0.05318,
+              0.02204
+            ],
+            "0.18": [
+              0.15799,
+              0.15521,
+              0.15652
+            ],
+            "0.5": [
+              0.47108,
+              0.47206,
+              0.47843
+            ],
+            "0.9": [
+              0.91032,
+              0.90566,
+              0.91644
+            ],
+            "0.98": [
+              0.94521,
+              0.9729,
+              0.97386
+            ],
+            "1": [
+              0.94118,
+              0.98431,
+              0.98431
+            ]
+          },
+          "luma_decreasing_steps": 32,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.076063,
+          "sum_downward_steps_in_8bit_codes": 2.114524,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 2.054646,
+          "max_rgb_spread": 0.043137,
+          "range_10_to_90": 0.817029
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.688372,
+              0.398574,
+              0.302202
+            ],
+            [
+              0.123965,
+              0.254299,
+              0.151504
+            ],
+            [
+              0.0452,
+              0.221481,
+              0.529009
+            ],
+            [
+              0.999977,
+              0.405093,
+              0.096644
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "pat_fuji_velvia_50",
+      "name": "Pat David Velvia 50 approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/fuji_velvia_50.cube",
+      "sha256": "48607cba2605fb2ac183b34b37867fa1d5cfaec04afc0c9fc1a46ebea076451f",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/colorslide/fuji_velvia_50.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/fuji_velvia_50.png",
+        "original_sha256": "bbd29985ab7adf11bc134a15c3664460fcef2a0cf6ae4fc1bff6f18504bcec20",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 4.58023,
+            "rms_in_8bit_codes": 0.24629,
+            "p99_abs_in_8bit_codes": 0.85297
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "foliage",
+          "landscape",
+          "nature"
+        ],
+        "avoid": [
+          "portrait skin",
+          "neon or already saturated sunset",
+          "strict color accuracy"
+        ],
+        "initial_strength_range": [
+          0.1,
+          0.25
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.00392,
+              0.0,
+              0.0
+            ],
+            "0.02": [
+              0.01594,
+              0.00865,
+              0.00898
+            ],
+            "0.18": [
+              0.10585,
+              0.10191,
+              0.09349
+            ],
+            "0.5": [
+              0.45539,
+              0.45539,
+              0.46176
+            ],
+            "0.9": [
+              0.88121,
+              0.87967,
+              0.88082
+            ],
+            "0.98": [
+              0.9626,
+              0.96434,
+              0.94548
+            ],
+            "1": [
+              0.98039,
+              0.98431,
+              0.94118
+            ]
+          },
+          "luma_decreasing_steps": 0,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.0,
+          "sum_downward_steps_in_8bit_codes": 0.0,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 4.528677,
+          "max_rgb_spread": 0.043137,
+          "range_10_to_90": 0.83444
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.626459,
+              0.345533,
+              0.269014
+            ],
+            [
+              0.047171,
+              0.213559,
+              0.053562
+            ],
+            [
+              0.035163,
+              0.268164,
+              0.574021
+            ],
+            [
+              0.974319,
+              0.30038,
+              0.038331
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "pat_fuji_superia_800",
+      "name": "Pat David Superia 800 approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/fuji_superia_800.cube",
+      "sha256": "325713edc4b87cd66f06caecf3f01ae0003fa71c0dc5355b4db94804ca30cb85",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/negative_old/fuji_superia_800.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/fuji_superia_800.png",
+        "original_sha256": "68cafdb21e43389372e10c261994a936f8abd0ef445c6b11af11f59b6e6384c2",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 7.85087,
+            "rms_in_8bit_codes": 0.32302,
+            "p99_abs_in_8bit_codes": 1.13968
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "street",
+          "mixed-light night",
+          "warm indoor"
+        ],
+        "avoid": [
+          "neutral product photography",
+          "delicate skin color",
+          "deep noisy shadows"
+        ],
+        "initial_strength_range": [
+          0.1,
+          0.25
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.00392,
+              0.07059,
+              0.07451
+            ],
+            "0.02": [
+              0.00695,
+              0.07177,
+              0.0775
+            ],
+            "0.18": [
+              0.06868,
+              0.16276,
+              0.15909
+            ],
+            "0.5": [
+              0.58088,
+              0.56912,
+              0.55735
+            ],
+            "0.9": [
+              0.92058,
+              0.91065,
+              0.90778
+            ],
+            "0.98": [
+              0.96369,
+              0.94563,
+              0.9525
+            ],
+            "1": [
+              0.96863,
+              0.93725,
+              0.95686
+            ]
+          },
+          "luma_decreasing_steps": 35,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.069894,
+          "sum_downward_steps_in_8bit_codes": 1.603436,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": -1.178814,
+          "max_rgb_spread": 0.097664,
+          "range_10_to_90": 0.826851
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.736834,
+              0.475696,
+              0.294281
+            ],
+            [
+              0.003648,
+              0.261819,
+              0.110003
+            ],
+            [
+              0.179062,
+              0.307677,
+              0.696384
+            ],
+            [
+              0.995533,
+              0.515364,
+              0.018825
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "pat_kodak_tri_x_400",
+      "name": "Pat David Tri-X 400 monochrome approximation",
+      "path": "assets/luts/pat-david-cc-by-sa-4.0/kodak_tri-x_400.cube",
+      "sha256": "d9cb530e4672fcd611217fa0ad611103cef26638a032df35f0d002a60926e146",
+      "source": {
+        "author": "Pat David",
+        "repository": "https://github.com/NatronGitHub/clut",
+        "commit": "af7b50d4caf6244fb6895a647f5b6a84efe7931a",
+        "url": "https://raw.githubusercontent.com/NatronGitHub/clut/af7b50d4caf6244fb6895a647f5b6a84efe7931a/bw/kodak_tri-x_400.png",
+        "original_path": "assets/luts/pat-david-cc-by-sa-4.0/originals/kodak_tri-x_400.png",
+        "original_sha256": "d433777bf24806dca52c4b510b63947eca968b8220ed188170306482d2772d9c",
+        "original_info": {
+          "width": 512,
+          "height": 512,
+          "level": 8,
+          "size": 64,
+          "bit_depth": 16,
+          "png_chunks": [
+            "IDAT",
+            "IEND",
+            "IHDR"
+          ],
+          "conversion_error": {
+            "method": "RGB component absolute difference, CUBE33 vs original Hald64, 20000 uniform random RGB inputs; not a perceptual image-quality score",
+            "max_abs_in_8bit_codes": 1.32334,
+            "rms_in_8bit_codes": 0.17231,
+            "p99_abs_in_8bit_codes": 0.48314
+          }
+        }
+      },
+      "license": {
+        "spdx": "CC-BY-SA-4.0",
+        "license_path": "assets/luts/pat-david-cc-by-sa-4.0/LICENSE-CC-BY-SA-4.0.txt",
+        "attribution_path": "assets/luts/pat-david-cc-by-sa-4.0/ATTRIBUTION.md",
+        "evidence": "https://github.com/NatronGitHub/clut/blob/af7b50d4caf6244fb6895a647f5b6a84efe7931a/README.md"
+      },
+      "color_space": {
+        "input": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "output": "display-referred sRGB RGB [0,1] (family-level assumption)",
+        "status": "assumed_not_individually_verified",
+        "evidence": [
+          "https://rawpedia.rawtherapee.com/Film_Emulation",
+          "https://patdavid.net/2015/03/film-emulation-in-rawtherapee/"
+        ],
+        "note": "RawPedia documents sRGB for the related film-emulation collection. These 16-bit Natron originals have no sRGB/gAMA/ICC metadata; source README gives no per-file encoding. No ICC certification or exact camera-profile match is claimed."
+      },
+      "usage": {
+        "scenes": [
+          "black-and-white",
+          "street",
+          "shape and texture studies"
+        ],
+        "avoid": [
+          "color-critical scene",
+          "sunset whose story depends on color"
+        ],
+        "initial_strength_range": [
+          1.0,
+          1.0
+        ],
+        "auto_select": false,
+        "recommendation_basis": "curatorial hypothesis from measured tone/color response, to be confirmed on each image; not a stock-name guarantee",
+        "limitations": [
+          "preview before use",
+          "cannot recover clipped JPEG detail",
+          "cannot add grain, halation, texture, local masks or denoising",
+          "not a measured reproduction of named stock",
+          "no Log/HDR/linear/AdobeRGB/P3 inputs without a known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.035294118,
+        "max": 0.956862745,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.03922,
+              0.03922,
+              0.03922
+            ],
+            "0.02": [
+              0.03957,
+              0.03957,
+              0.03957
+            ],
+            "0.18": [
+              0.14656,
+              0.14656,
+              0.14656
+            ],
+            "0.5": [
+              0.52549,
+              0.52549,
+              0.52549
+            ],
+            "0.9": [
+              0.89778,
+              0.89778,
+              0.89778
+            ],
+            "0.98": [
+              0.94556,
+              0.94556,
+              0.94556
+            ],
+            "1": [
+              0.95294,
+              0.95294,
+              0.95294
+            ]
+          },
+          "luma_decreasing_steps": 22,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.010109,
+          "sum_downward_steps_in_8bit_codes": 0.148846,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 1.882592,
+          "max_rgb_spread": 0.0,
+          "range_10_to_90": 0.843926
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.456316,
+              0.456316,
+              0.456316
+            ],
+            [
+              0.159702,
+              0.159702,
+              0.159702
+            ],
+            [
+              0.489899,
+              0.489899,
+              0.489899
+            ],
+            [
+              0.536349,
+              0.536349,
+              0.536349
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "lumix_meridian",
+      "name": "LUMIX original Meridian (experimental sRGB candidate)",
+      "path": "assets/luts/lumix-original-mit/Meridian.cube",
+      "sha256": "1cf9525a9e4e4b3bbcd96018ad5bae63041a33d4f45969d70f029fa614b9be37",
+      "source": {
+        "author": "Zhengxiao Wu (t0saki), AI-assisted original mathematical design per upstream",
+        "repository": "https://github.com/t0saki/lumix-original-looks",
+        "commit": "708f98d97a26b123128480050c2a1459c8a58cca",
+        "url": "https://raw.githubusercontent.com/t0saki/lumix-original-looks/708f98d97a26b123128480050c2a1459c8a58cca/luts/Meridian.cube",
+        "modifications": "none; original CUBE bytes preserved"
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "assets/luts/lumix-original-mit/LICENSE",
+        "attribution_path": "assets/luts/lumix-original-mit/ATTRIBUTION.md",
+        "evidence": "https://github.com/t0saki/lumix-original-looks/blob/708f98d97a26b123128480050c2a1459c8a58cca/README.md"
+      },
+      "color_space": {
+        "input": "LUMIX S9 Standard photo style + sRGB display-referred RGB [0,1]",
+        "output": "sRGB display-referred RGB [0,1]",
+        "status": "author_declared_profile_specific",
+        "evidence": [
+          "https://github.com/t0saki/lumix-original-looks/blob/708f98d97a26b123128480050c2a1459c8a58cca/README.md"
+        ],
+        "note": "Explicit sRGB basis, optimized for a specific already-rendered camera profile. Generic sRGB JPEG use is an experiment, not an author-certified profile match."
+      },
+      "usage": {
+        "scenes": [
+          "daylight",
+          "neutral baseline",
+          "documentary"
+        ],
+        "avoid": [
+          "assuming neutral means identity",
+          "exact product color"
+        ],
+        "initial_strength_range": [
+          0.15,
+          0.35
+        ],
+        "auto_select": false,
+        "recommendation_basis": "author-declared scene intent plus measured neutral ramp; lower starting strengths are this project's cautious generic-JPEG policy, not the author's camera opacity settings",
+        "limitations": [
+          "generic-JPEG validation required",
+          "not a faithful film-stock emulation",
+          "AI-assisted upstream origin is explicit",
+          "no Log/HDR/linear/AdobeRGB/P3 input without known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.0,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "0.02": [
+              0.02839,
+              0.02836,
+              0.02787
+            ],
+            "0.18": [
+              0.21061,
+              0.21053,
+              0.21059
+            ],
+            "0.5": [
+              0.55568,
+              0.55568,
+              0.55568
+            ],
+            "0.9": [
+              0.92488,
+              0.92458,
+              0.92521
+            ],
+            "0.98": [
+              0.98786,
+              0.98763,
+              0.98796
+            ],
+            "1": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "luma_decreasing_steps": 0,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.0,
+          "sum_downward_steps_in_8bit_codes": 0.0,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 3.135276,
+          "max_rgb_spread": 0.000994,
+          "range_10_to_90": 0.803804
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.742853,
+              0.509507,
+              0.383251
+            ],
+            [
+              0.180702,
+              0.296619,
+              0.073727
+            ],
+            [
+              0.148696,
+              0.362917,
+              0.773355
+            ],
+            [
+              0.994823,
+              0.58099,
+              0.364236
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "lumix_lowsun",
+      "name": "LUMIX original Lowsun (experimental sRGB candidate)",
+      "path": "assets/luts/lumix-original-mit/Lowsun.cube",
+      "sha256": "310626bb7c23f343b56006a7eca349173035bc8349aecb8acb640c45ad98c0ff",
+      "source": {
+        "author": "Zhengxiao Wu (t0saki), AI-assisted original mathematical design per upstream",
+        "repository": "https://github.com/t0saki/lumix-original-looks",
+        "commit": "708f98d97a26b123128480050c2a1459c8a58cca",
+        "url": "https://raw.githubusercontent.com/t0saki/lumix-original-looks/708f98d97a26b123128480050c2a1459c8a58cca/luts/Lowsun.cube",
+        "modifications": "none; original CUBE bytes preserved"
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "assets/luts/lumix-original-mit/LICENSE",
+        "attribution_path": "assets/luts/lumix-original-mit/ATTRIBUTION.md",
+        "evidence": "https://github.com/t0saki/lumix-original-looks/blob/708f98d97a26b123128480050c2a1459c8a58cca/README.md"
+      },
+      "color_space": {
+        "input": "LUMIX S9 Standard photo style + sRGB display-referred RGB [0,1]",
+        "output": "sRGB display-referred RGB [0,1]",
+        "status": "author_declared_profile_specific",
+        "evidence": [
+          "https://github.com/t0saki/lumix-original-looks/blob/708f98d97a26b123128480050c2a1459c8a58cca/README.md"
+        ],
+        "note": "Explicit sRGB basis, optimized for a specific already-rendered camera profile. Generic sRGB JPEG use is an experiment, not an author-certified profile match."
+      },
+      "usage": {
+        "scenes": [
+          "golden hour",
+          "warm backlight"
+        ],
+        "avoid": [
+          "already strongly orange sunset",
+          "neutral skin/product requirements",
+          "excess cool shadow cast"
+        ],
+        "initial_strength_range": [
+          0.1,
+          0.25
+        ],
+        "auto_select": false,
+        "recommendation_basis": "author-declared scene intent plus measured neutral ramp; lower starting strengths are this project's cautious generic-JPEG policy, not the author's camera opacity settings",
+        "limitations": [
+          "generic-JPEG validation required",
+          "not a faithful film-stock emulation",
+          "AI-assisted upstream origin is explicit",
+          "no Log/HDR/linear/AdobeRGB/P3 input without known prior conversion"
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "row_count": 35937,
+        "domain_min": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "domain_max": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "all_finite": true,
+        "min": 0.000164644,
+        "max": 1.0,
+        "out_of_unit_range_values": 0,
+        "neutral_ramp": {
+          "method": "1025 encoded-RGB neutral samples; Rec.709-weighted encoded luma is a diagnostic, not scene-linear luminance",
+          "samples_rgb": {
+            "0": [
+              0.00532,
+              0.01282,
+              0.0247
+            ],
+            "0.02": [
+              0.01985,
+              0.02869,
+              0.04552
+            ],
+            "0.18": [
+              0.15371,
+              0.1706,
+              0.19021
+            ],
+            "0.5": [
+              0.52022,
+              0.48716,
+              0.46167
+            ],
+            "0.9": [
+              0.94631,
+              0.91259,
+              0.87988
+            ],
+            "0.98": [
+              0.98782,
+              0.9873,
+              0.98753
+            ],
+            "1": [
+              1.0,
+              1.0,
+              1.0
+            ]
+          },
+          "luma_decreasing_steps": 0,
+          "luma_flat_steps": 0,
+          "largest_downward_step_in_8bit_codes": 0.0,
+          "sum_downward_steps_in_8bit_codes": 0.0,
+          "highlight_0_98_to_1_luma_difference_in_8bit_codes": 3.206244,
+          "max_rgb_spread": 0.081443,
+          "range_10_to_90": 0.822328
+        },
+        "synthetic_color_probes": {
+          "input_rgb": [
+            [
+              0.65,
+              0.43,
+              0.31
+            ],
+            [
+              0.08,
+              0.27,
+              0.07
+            ],
+            [
+              0.12,
+              0.32,
+              0.7
+            ],
+            [
+              1.0,
+              0.45,
+              0.04
+            ]
+          ],
+          "output_rgb": [
+            [
+              0.654452,
+              0.417348,
+              0.270387
+            ],
+            [
+              0.106635,
+              0.247858,
+              0.072725
+            ],
+            [
+              0.127693,
+              0.306099,
+              0.654297
+            ],
+            [
+              0.968344,
+              0.474677,
+              0.103304
+            ]
+          ],
+          "note": "Representative RGB probes only; not proof of accurate skin, foliage or gamut handling"
+        }
+      }
+    },
+    {
+      "id": "ac_amber_dusk",
+      "name": "AI Colorist Amber Dusk",
+      "path": "assets/luts/creative-v1/amber_dusk.cube",
+      "sha256": "5e1e84637b7f933e393d65a01d16a67f8bcc2e7a54f80a94e0f6994d7b417b5d",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "golden hour",
+          "warm travel"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.2,
+        "midtone_lift": 0.0,
+        "chroma_scale": 1.12,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          0,
+          -4
+        ],
+        "highlight_lab_ab": [
+          3,
+          9
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_coral_dusk",
+      "name": "AI Colorist Coral Dusk",
+      "path": "assets/luts/creative-v1/coral_dusk.cube",
+      "sha256": "ff7ef43a8a47785483630e9884150efb53033becbad905a1c8da9196a897f675",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "sunset",
+          "coral warm light"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.18,
+        "midtone_lift": 0.0,
+        "chroma_scale": 1.1,
+        "hue_degrees": -3,
+        "shadow_lab_ab": [
+          1,
+          -3
+        ],
+        "highlight_lab_ab": [
+          8,
+          4
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_teal_gold",
+      "name": "AI Colorist Teal Gold",
+      "path": "assets/luts/creative-v1/teal_gold.cube",
+      "sha256": "8bff054d56b3616d7846b98ec64fcb904073447bf2371274be4a5d2db20468a7",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "city sunset",
+          "bold travel"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.24,
+        "midtone_lift": 0.0,
+        "chroma_scale": 1.16,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          -9,
+          -7
+        ],
+        "highlight_lab_ab": [
+          0,
+          9
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_vivid_travel",
+      "name": "AI Colorist Vivid Travel",
+      "path": "assets/luts/creative-v1/vivid_travel.cube",
+      "sha256": "e3648ea7805e2cf4e5bd8fd1000b717048653813aeb5cd31c72354036f99eb87",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "travel",
+          "landscape"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.3,
+        "midtone_lift": 0.02,
+        "chroma_scale": 1.24,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          -2,
+          -3
+        ],
+        "highlight_lab_ab": [
+          2,
+          5
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_clean_landscape",
+      "name": "AI Colorist Clean Landscape",
+      "path": "assets/luts/creative-v1/clean_landscape.cube",
+      "sha256": "0fd5d474690350e4f0e5d29fe97881c019102879c8f7a362b2c7eca8c9522078",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "landscape",
+          "daylight"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.18,
+        "midtone_lift": 0.01,
+        "chroma_scale": 1.08,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          -2,
+          -2
+        ],
+        "highlight_lab_ab": [
+          0,
+          2
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_olive_gold",
+      "name": "AI Colorist Olive Gold",
+      "path": "assets/luts/creative-v1/olive_gold.cube",
+      "sha256": "00a4918f6cb6c66170f8029a95d51397804844d2c882e23a5db414590b2b5334",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "graphic landscape",
+          "architecture"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.2,
+        "midtone_lift": 0.0,
+        "chroma_scale": 1.1,
+        "hue_degrees": 5,
+        "shadow_lab_ab": [
+          -4,
+          4
+        ],
+        "highlight_lab_ab": [
+          -2,
+          8
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_urban_cool",
+      "name": "AI Colorist Urban Cool",
+      "path": "assets/luts/creative-v1/urban_cool.cube",
+      "sha256": "93d209599f6a381afb59ec2a3027de0c13e71508ae7628ef8fb34866234ac5f8",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "urban blue hour",
+          "night"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.26,
+        "midtone_lift": -0.01,
+        "chroma_scale": 1.05,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          -4,
+          -7
+        ],
+        "highlight_lab_ab": [
+          -1,
+          -2
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_soft_editorial",
+      "name": "AI Colorist Soft Editorial",
+      "path": "assets/luts/creative-v1/soft_editorial.cube",
+      "sha256": "498cf8ef53e30fcf66694c4142c89862d6c4c171128aa9122ddc8e1fe86439f2",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "portrait preview",
+          "soft daylight"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": -0.12,
+        "midtone_lift": 0.02,
+        "chroma_scale": 0.94,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          1,
+          -2
+        ],
+        "highlight_lab_ab": [
+          2,
+          3
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_neutral_density",
+      "name": "AI Colorist Neutral Density",
+      "path": "assets/luts/creative-v1/neutral_density.cube",
+      "sha256": "8e8bba95223ed57a7f76b3d7f0c1ee5a23252c4951189bba07880a0cad1f4d48",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "documentary",
+          "strong neutral tone"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          0.5,
+          0.85
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.3,
+        "midtone_lift": -0.01,
+        "chroma_scale": 1.02,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          0,
+          0
+        ],
+        "highlight_lab_ab": [
+          0,
+          0
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    },
+    {
+      "id": "ac_silver_mono",
+      "name": "AI Colorist Silver Mono",
+      "path": "assets/luts/creative-v1/silver_mono.cube",
+      "sha256": "6b9d4c9816dabfb1f29db1d9c56be784f396f110662fb485945f70c5f49312ea",
+      "source": {
+        "author": "FantasyChino and AI Colorist contributors (AI-assisted analytic design)",
+        "url": "https://github.com/FantasyChino/ai-colorist-agent",
+        "modifications": "Original fixed analytic recipe; no photographer LUT values, corpus or source-image fit."
+      },
+      "license": {
+        "spdx": "MIT",
+        "license_path": "LICENSE",
+        "attribution_path": "assets/luts/creative-v1/ATTRIBUTION.md"
+      },
+      "color_space": {
+        "input": "display-referred encoded sRGB RGB [0,1]",
+        "output": "display-referred encoded sRGB RGB [0,1]",
+        "status": "design_declared_not_icc_conversion"
+      },
+      "source_dependent": false,
+      "usage": {
+        "scenes": [
+          "black-and-white",
+          "shape and texture"
+        ],
+        "avoid": [
+          "color-critical products",
+          "unconverted RAW/Log/HDR/P3"
+        ],
+        "initial_strength_range": [
+          1.0,
+          1.0
+        ],
+        "auto_select": false,
+        "limitations": [
+          "Global LUT; inspect important colors and highlight gradients.",
+          "Orange-hue attenuation is not semantic skin protection.",
+          "Cannot recover clipped detail or encode dehazing/masks."
+        ]
+      },
+      "recipe": {
+        "contrast": 0.32,
+        "midtone_lift": 0.0,
+        "chroma_scale": 0.0,
+        "hue_degrees": 0,
+        "shadow_lab_ab": [
+          0,
+          0
+        ],
+        "highlight_lab_ab": [
+          0,
+          0
+        ]
+      },
+      "validation": {
+        "size": 33,
+        "rows": 35937,
+        "finite_unit_range": true,
+        "gray_ramp_decreasing_steps_8bit": 0,
+        "black_rgb": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "white_rgb": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    }
+  ]
+}

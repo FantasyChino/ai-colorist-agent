@@ -1,0 +1,24 @@
+{
+  "name": "AI Colorist",
+
+  "version": "1.0.0",
+
+  "description":
+  "A professional photography assistant skill that analyzes photos, recognizes visual styles and generates color grading strategies.",
+
+
+  "author":
+  "AI Colorist Community",
+
+
+  "capabilities": [
+
+    "photo_analysis",
+
+    "style_recognition",
+
+    "color_grading_strategy"
+
+  ]
+
+}

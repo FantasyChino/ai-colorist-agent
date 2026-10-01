@@ -1,0 +1,222 @@
+{
+  "description": "Photo-specific final recipes; no input photos or local paths included.",
+  "recipes": [
+    {
+      "id": "clouds",
+      "recipe": {
+        "name": "Burnished sunset",
+        "knots": [
+          0,
+          8,
+          20,
+          35,
+          50,
+          65,
+          80,
+          90,
+          100
+        ],
+        "values": [
+          0,
+          7,
+          18,
+          34,
+          53,
+          71,
+          85,
+          93,
+          100
+        ],
+        "chroma": 1.55,
+        "warm_ab": [
+          5,
+          10
+        ],
+        "cool_ab": [
+          -5,
+          -9
+        ]
+      },
+      "strength": 1.15,
+      "extra": {},
+      "path": "examples/grades/clouds.cube",
+      "sha256": "6d19002ff077470b2358dda182d0feb2fcf37edab32f042ce6045a6977e930c5",
+      "source_dimensions": [
+        5568,
+        3712
+      ],
+      "source_dependent_suitability": true,
+      "license": "MIT",
+      "limitations": [
+        "Source-specific authored recipe, not pretrained or author style recovery.",
+        "Global LUT, no dehaze or spatial mask.",
+        "Encoded sRGB assumption; no ICC conversion."
+      ]
+    },
+    {
+      "id": "architecture",
+      "recipe": {
+        "name": "Rose blue architecture",
+        "knots": [
+          0,
+          4,
+          14,
+          32,
+          51,
+          66,
+          80,
+          92,
+          100
+        ],
+        "values": [
+          0,
+          4,
+          18,
+          42,
+          63,
+          77,
+          88,
+          95,
+          100
+        ],
+        "chroma": 1.58,
+        "warm_ab": [
+          5,
+          -2
+        ],
+        "cool_ab": [
+          1,
+          -7
+        ]
+      },
+      "strength": 0.8,
+      "extra": {
+        "rose_boost": 4
+      },
+      "path": "examples/grades/architecture.cube",
+      "sha256": "69220177262cad53f23ea8ecbe05b4553b6e62eb3910bae7b9c621e57718f8a5",
+      "source_dimensions": [
+        5568,
+        3712
+      ],
+      "source_dependent_suitability": true,
+      "license": "MIT",
+      "limitations": [
+        "Source-specific authored recipe, not pretrained or author style recovery.",
+        "Global LUT, no dehaze or spatial mask.",
+        "Encoded sRGB assumption; no ICC conversion."
+      ]
+    },
+    {
+      "id": "traffic",
+      "recipe": {
+        "name": "Amber and petrol blue",
+        "knots": [
+          0,
+          5,
+          12,
+          25,
+          45,
+          65,
+          82,
+          94,
+          100
+        ],
+        "values": [
+          0,
+          4,
+          16,
+          31,
+          48,
+          67,
+          82,
+          94,
+          100
+        ],
+        "chroma": 1.4,
+        "warm_ab": [
+          4,
+          10
+        ],
+        "cool_ab": [
+          -7,
+          -10
+        ]
+      },
+      "strength": 1.15,
+      "extra": {
+        "cool_highlight_fade": [
+          60,
+          85
+        ]
+      },
+      "path": "examples/grades/traffic.cube",
+      "sha256": "8698f0b8a0ae289733b3185be0b9e33e01f38a288097a4302e611b3d8f527dd7",
+      "source_dimensions": [
+        3712,
+        5568
+      ],
+      "source_dependent_suitability": true,
+      "license": "MIT",
+      "limitations": [
+        "Source-specific authored recipe, not pretrained or author style recovery.",
+        "Global LUT, no dehaze or spatial mask.",
+        "Encoded sRGB assumption; no ICC conversion."
+      ]
+    },
+    {
+      "id": "night",
+      "recipe": {
+        "name": "Midnight city",
+        "knots": [
+          0,
+          5,
+          12,
+          25,
+          45,
+          65,
+          82,
+          94,
+          100
+        ],
+        "values": [
+          0,
+          4,
+          11,
+          23,
+          44,
+          67,
+          84,
+          94,
+          100
+        ],
+        "chroma": 1.3,
+        "warm_ab": [
+          3,
+          5
+        ],
+        "cool_ab": [
+          -10,
+          -23
+        ]
+      },
+      "strength": 1.15,
+      "extra": {
+        "neutral_chroma_reduction": 0.25
+      },
+      "path": "examples/grades/night.cube",
+      "sha256": "18d3d96f60b2faf467bad56f80ffb25edbbc6a6ad026b7dcbac8af47f00b8315",
+      "source_dimensions": [
+        5568,
+        3712
+      ],
+      "source_dependent_suitability": true,
+      "license": "MIT",
+      "limitations": [
+        "Source-specific authored recipe, not pretrained or author style recovery.",
+        "Global LUT, no dehaze or spatial mask.",
+        "Encoded sRGB assumption; no ICC conversion."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "title": "Photography Style Schema",
+
+  "description": "Representation of photographic style knowledge.",
+
+  "type": "object",
+
+
+  "properties": {
+
+
+    "identity": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "name": {
+
+          "type": "string"
+
+        },
+
+
+        "category": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        },
+
+
+        "description": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "visual_language": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "keywords": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        },
+
+
+        "emotion": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        },
+
+
+        "suitable_scene": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        }
+
+      }
+
+    },
+
+
+    "tone": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "contrast": {
+
+          "type": "string"
+
+        },
+
+
+        "black_point": {
+
+          "type": "string"
+
+        },
+
+
+        "highlight_rolloff": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "color_language": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "temperature": {
+
+          "type": "string"
+
+        },
+
+
+        "dominant_colors": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        },
+
+
+        "saturation": {
+
+          "type": "string"
+
+        },
+
+
+        "skin_tone": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "texture": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "grain": {
+
+          "type": "string"
+
+        },
+
+
+        "softness": {
+
+          "type": "string"
+
+        },
+
+
+        "halation": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "grading_rules": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "contrast_adjustment": {
+
+          "type": "string"
+
+        },
+
+
+        "color_adjustment": {
+
+          "type": "string"
+
+        },
+
+
+        "protected_regions": {
+
+
+          "type": "array",
+
+          "items": {
+
+            "type": "string"
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

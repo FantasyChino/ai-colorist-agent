@@ -1,0 +1,43 @@
+# Local environments and credentials
+.venv/
+.venv.backup*/
+.release-tools/
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Private photographs, portfolio caches and generated outputs
+/references/photographers/
+/demo/
+/output.jpg
+/assets/luts/learned/
+/assets/luts/custom/
+/assets/luts/derived/
+/mcp-*-test-results.json
+/mcp-test-results.json
+/plugin-grading-upgrade-report.md
+/mcp-config.json
+/codex-mcp.toml
+/v0_agent.py
+/tools/color_grader.py
+/tools/strategy_mapper.py
+/server/learned_style_batch.py
+/server/style_output_report.py
+/local/
+/validation/local/
+/docs/images/looks-*.jpg
+/docs/look-validation.json
+
+# OS debris
+Thumbs.db
+.DS_Store

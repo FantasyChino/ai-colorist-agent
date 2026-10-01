@@ -1,0 +1,151 @@
+{
+  "description": "Generated from MCP list_tools; actual input/output schemas.",
+  "tools": [
+    {
+      "name": "test_colorist",
+      "description": "Test whether the AI Colorist MCP server is connected.",
+      "inputSchema": {
+        "properties": {},
+        "type": "object",
+        "title": "test_coloristArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "title": "test_coloristDictOutput"
+      }
+    },
+    {
+      "name": "list_looks",
+      "description": "List bundled ready-to-use looks, scenes, encoding and license conditions.\n\n        No training is required. Inspect the source photo before choosing a look.\n        ",
+      "inputSchema": {
+        "properties": {},
+        "type": "object",
+        "title": "list_looksArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "title": "list_looksDictOutput"
+      }
+    },
+    {
+      "name": "prepare_look",
+      "description": "Prepare a catalog look at strength 0..1, retaining license and provenance.\n\n        Pass the returned lut_path to apply_color_grade's strategy.lut. This\n        mixes encoded RGB with identity and performs no log/RAW conversion.\n        ",
+      "inputSchema": {
+        "properties": {
+          "lut_id": {
+            "title": "Lut Id",
+            "type": "string"
+          },
+          "strength": {
+            "default": 0.65,
+            "title": "Strength",
+            "type": "number"
+          }
+        },
+        "required": [
+          "lut_id"
+        ],
+        "type": "object",
+        "title": "prepare_lookArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "title": "prepare_lookDictOutput"
+      }
+    },
+    {
+      "name": "analyze_image",
+      "description": "Analyze brightness, contrast, exposure, saturation, and dominant colors.\n\n        Optional pixel statistics matching photo_analysis_schema.json.\n        The host model should visually inspect the image for grading decisions.\n        Relative paths use the project root. This does not recognize subjects.\n        ",
+      "inputSchema": {
+        "properties": {
+          "image_path": {
+            "title": "Image Path",
+            "type": "string"
+          }
+        },
+        "required": [
+          "image_path"
+        ],
+        "type": "object",
+        "title": "analyze_imageArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "title": "analyze_imageDictOutput"
+      }
+    },
+    {
+      "name": "learn_style_lut",
+      "description": "Fit a source-dependent creative CUBE LUT from 500+ reference photos.\n\n        The references are analyzed locally with OpenCV and weighted one image per\n        vote. The full corpus selects a source-compatible creative mode. This is\n        an unpaired statistical color-distribution approximation,\n        not recovery of a photographer's original editing curve. It writes a LUT,\n        profile, and provenance manifest under assets/luts/learned; it never\n        modifies the source or reference images. strength is between 0 and 2.\n        ",
+      "inputSchema": {
+        "properties": {
+          "source_image_path": {
+            "title": "Source Image Path",
+            "type": "string"
+          },
+          "reference_dir": {
+            "title": "Reference Dir",
+            "type": "string"
+          },
+          "style_name": {
+            "title": "Style Name",
+            "type": "string"
+          },
+          "strength": {
+            "default": 1.0,
+            "title": "Strength",
+            "type": "number"
+          }
+        },
+        "required": [
+          "source_image_path",
+          "reference_dir",
+          "style_name"
+        ],
+        "type": "object",
+        "title": "learn_style_lutArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": true,
+        "title": "learn_style_lutDictOutput"
+      }
+    },
+    {
+      "name": "apply_color_grade",
+      "description": "Grade an image and save output.jpg in the project root.\n\n        Relative image and LUT paths are resolved against the project root.\n        The strategy is passed to the existing ColorPipeline.\n        ",
+      "inputSchema": {
+        "properties": {
+          "image_path": {
+            "title": "Image Path",
+            "type": "string"
+          },
+          "strategy": {
+            "additionalProperties": true,
+            "title": "Strategy",
+            "type": "object"
+          }
+        },
+        "required": [
+          "image_path",
+          "strategy"
+        ],
+        "type": "object",
+        "title": "apply_color_gradeArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        },
+        "title": "apply_color_gradeDictOutput"
+      }
+    }
+  ]
+}

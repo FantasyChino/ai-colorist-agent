@@ -1,0 +1,33 @@
+{
+  "permission_documentation": "https://scikit-image.org/docs/0.25.x/api/skimage.data.html",
+  "sources": [
+    {
+      "file": "astronaut.png",
+      "author": "NASA",
+      "license": "public-domain",
+      "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/c1af2bf80d2c8845bbbf06222f87e8b58a8e5c1e/skimage/data/astronaut.png",
+      "sha256": "88431cd9653ccd539741b555fb0a46b61558b301d4110412b5bc28b5e3ea6cb5"
+    },
+    {
+      "file": "coffee.png",
+      "author": "Rachel Michetti",
+      "license": "CC0-1.0",
+      "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/c1af2bf80d2c8845bbbf06222f87e8b58a8e5c1e/skimage/data/coffee.png",
+      "sha256": "cc02f8ca188b167c775a7101b5d767d1e71792cf762c33d6fa15a4599b5a8de7"
+    },
+    {
+      "file": "chelsea.png",
+      "author": "Stefan van der Walt",
+      "license": "CC0-1.0",
+      "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/c1af2bf80d2c8845bbbf06222f87e8b58a8e5c1e/skimage/data/chelsea.png",
+      "sha256": "596aa1e7cb875eb79f437e310381d26b338a81c2da23439704a73c4651e8c4bb"
+    },
+    {
+      "file": "rocket.jpg",
+      "author": "SpaceX",
+      "license": "public-domain",
+      "source": "https://raw.githubusercontent.com/scikit-image/scikit-image/c1af2bf80d2c8845bbbf06222f87e8b58a8e5c1e/skimage/data/rocket.jpg",
+      "sha256": "c2dd0de7c538df8d111e479619b129464d0269d0ae5fd18ca91d33a7fdfea95c"
+    }
+  ]
+}

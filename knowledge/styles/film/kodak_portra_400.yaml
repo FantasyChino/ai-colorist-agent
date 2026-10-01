@@ -1,0 +1,70 @@
+style_profile:
+  identity:
+    name: Kodak Portra 400 inspired natural portrait direction
+    category: [film_inspired, portrait, travel]
+    description: >-
+      条件式审美参考，不是原始胶片的测量模型，也不保证复刻某一胶片、扫描或冲洗流程。
+      根据具体照片和用户目标判断自然肤色、层次与颜色关系；不默认低对比、抬黑或偏暖。
+    status: aesthetic_reference_only
+
+  visual_language:
+    keywords: [natural, coherent_palette, readable_subject]
+    possible_scene: [portrait, travel, lifestyle, wedding]
+    scene_policy: >-
+      场景只提供候选线索。皮肤亮度、光比、白色细节、环境光与用户意图先于胶片名称。
+    emotion_policy: 情绪来自照片内容与意图，不由低饱和或暖色自动决定。
+
+  tone:
+    contrast:
+      decision: preserve_first_then_assess
+      description: >-
+        保留原片光比；只有明确需要时增减分离。当前 contrast=low 会抬黑削白，不等于柔和但有密度的胶片曲线。
+    black_point:
+      decision: preserve_by_default
+      description: >-
+        只在用户明确要 matte 且主体分离足够时考虑抬黑；低反差仍要有暗端锚点。
+    highlights:
+      goal: preserve_existing_gradients
+      execution_limit: 当前 Pipeline 没有定向软肩或 RAW 高光恢复，不把目标描述成已执行功能。
+
+  color_language:
+    temperature:
+      decision: preserve_scene_light
+      execution_limit: 全局 Temperature/Tint 未实现，不传入策略后宣称完成白平衡。
+    saturation:
+      decision: based_on_subject_and_environment
+      description: 不统一去饱和；原片真实而鲜明的颜色可以保留，问题色才考虑有限 HSL。
+    skin_tone:
+      goal: plausible_under_actual_light
+      execution_limit: 肤色与背景共享红橙时会一起变化；没有 skin/face mask，不能声称局部保护。
+
+  texture:
+    role: optional_visual_reference
+    unavailable_in_current_pipeline: [grain, halation, bloom, spatial_softening]
+    note: 当前 LUT 不生成纹理效果；不把这些审美特征写成已调用的处理。
+
+  matching_features:
+    positive_when: [user_wants_natural_film_inspired_direction, coherent_scene_palette, readable_skin_and_whites]
+    reject_when: [output_loses_white_detail, unwanted_gray_blacks, implausible_skin, strict_product_color_requirement]
+
+  implementation:
+    catalog: assets/luts/catalog.json
+    optional_lut_candidate_ids: [pat_kodak_portra_400, pat_kodak_portra_160]
+    candidate_policy: >-
+      按 ID 查询真实路径，不承诺未经验证的文件名。
+      Pat David 近似库为 CC-BY-SA-4.0；sRGB 是家族层级假设，逐文件未认证。
+      先生成无 LUT 对照，再按目录低强度预览。Portra 400 会抬黑及提亮中灰，明亮肤色或白衣需特别检查。
+    strength_method: >-
+      MCP 不支持 lut_strength；若确需低强度，用 skill 的 scripts/prepare_lut.py 生成派生 cube，再传实际返回路径。
+    executable_baseline:
+      exposure: 0
+      tone_strategy: {contrast: medium, black_point: normal}
+      hsl_adjustment: {}
+    unsupported_promises: [automatic_skin_protection, split_toning, raw_highlight_recovery, exact_film_reproduction]
+    acceptance: 输出的主体、肤色、黑位和白色纹理应服务照片；未胜过原片时不采用 LUT。
+
+  references:
+    - skills/style-matching/references/style-decisions.md
+    - skills/color-strategy/references/grading-foundations.md
+    - skills/color-strategy/references/tool-capabilities.md
+    - skills/color-strategy/references/lut-catalog.md

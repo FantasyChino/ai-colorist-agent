@@ -1,0 +1,274 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+
+  "title": "Photo Analysis Schema",
+
+  "description": "Visual understanding representation for AI photography analysis.",
+
+  "type": "object",
+
+  "properties": {
+
+    "resolution": {
+      "type": "object",
+      "description": "Original decoded image dimensions in pixels.",
+      "properties": {
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1}
+      },
+      "required": ["width", "height"]
+    },
+
+    "brightness": {
+      "type": "string",
+      "enum": ["dark", "balanced", "bright"]
+    },
+
+    "contrast": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+
+    "exposure": {
+      "type": "string",
+      "enum": ["underexposed", "balanced", "overexposed"]
+    },
+
+    "saturation": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+
+    "dominant_colors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 3,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["black", "white", "gray", "red", "orange", "yellow", "green", "aqua", "blue", "purple", "magenta"]
+      }
+    },
+
+    "metrics": {
+      "type": "object",
+      "description": "Deterministic image statistics. Gray statistics use all pixels; HSV statistics use a sample with a maximum edge of 1024 pixels.",
+      "properties": {
+        "mean_brightness": {"type": "number", "minimum": 0, "maximum": 255},
+        "grayscale_std": {"type": "number", "minimum": 0, "maximum": 255},
+        "highlight_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "shadow_ratio": {"type": "number", "minimum": 0, "maximum": 1},
+        "mean_saturation": {"type": "number", "minimum": 0, "maximum": 255},
+        "sample_resolution": {"$ref": "#/properties/resolution"}
+      }
+    },
+
+    "scene": {
+
+      "type": "object",
+
+      "properties": {
+
+        "category": {
+          "type": "string",
+          "description": "Main photography category"
+        },
+
+
+        "environment": {
+          "type": "string"
+        },
+
+
+        "subject": {
+          "type": "string"
+        },
+
+
+        "time": {
+          "type": "string"
+        }
+
+      }
+
+    },
+
+
+    "composition": {
+
+      "type": "object",
+
+      "properties": {
+
+
+        "subject_position": {
+          "type": "string"
+        },
+
+
+        "negative_space": {
+          "type": "string"
+        },
+
+
+        "depth": {
+          "type": "string"
+        },
+
+
+        "composition_style": {
+          "type": "string"
+        }
+
+      }
+
+    },
+
+
+    "lighting": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "direction": {
+          "type": "string"
+        },
+
+
+        "quality": {
+          "type": "string"
+        },
+
+
+        "contrast": {
+          "type": "string"
+        },
+
+
+        "temperature": {
+          "type": "string"
+        }
+
+      }
+
+    },
+
+
+    "technical": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "exposure": {
+          "type": "string"
+        },
+
+
+        "highlight_condition": {
+          "type": "string"
+        },
+
+
+        "shadow_condition": {
+          "type": "string"
+        },
+
+
+        "noise": {
+          "type": "string"
+        }
+
+      }
+
+    },
+
+
+    "color": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "dominant_colors": {
+
+          "type": "array",
+
+          "items": {
+            "type": "string"
+          }
+
+        },
+
+
+        "palette": {
+
+          "type": "string"
+
+        },
+
+
+        "saturation": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "emotion": {
+
+
+      "type": "object",
+
+      "properties": {
+
+
+        "mood": {
+
+          "type": "array",
+
+          "items": {
+            "type": "string"
+          }
+
+        },
+
+
+        "story": {
+
+          "type": "string"
+
+        }
+
+      }
+
+    },
+
+
+    "style_hint": {
+
+
+      "type": "array",
+
+      "items": {
+
+        "type": "string"
+
+      }
+
+    }
+
+  }
+
+}

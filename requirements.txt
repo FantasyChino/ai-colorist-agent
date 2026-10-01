@@ -1,0 +1,4 @@
+mcp==2.2.0
+opencv-python==5.0.0.93
+numpy==2.2.6
+jsonschema==4.26.0
